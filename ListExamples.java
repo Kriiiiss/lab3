@@ -1,7 +1,19 @@
 import java.util.ArrayList;
 import java.util.List;
 
+
+class MyStringChecker implements StringChecker {
+  public boolean checkString(String s){
+    if (s.length() == 3){
+      return true;
+    } else {
+      return false;
+    }
+  }
+}
+
 interface StringChecker { boolean checkString(String s); }
+
 
 class ListExamples {
 
@@ -12,7 +24,7 @@ class ListExamples {
     List<String> result = new ArrayList<>();
     for(String s: list) {
       if(sc.checkString(s)) {
-        result.add(0, s);
+        result.add(s);
       }
     }
     return result;
@@ -40,7 +52,7 @@ class ListExamples {
     }
     while(index2 < list2.size()) {
       result.add(list2.get(index2));
-      index1 += 1;
+      index2 += 1;
     }
     return result;
   }
